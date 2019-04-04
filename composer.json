@@ -1,0 +1,23 @@
+{
+    "name": "juyn/collect",
+    "description": "Implement an Extended version of Laravel Collection",
+    "require": {
+        "php": "^7.1.3",
+        "tightenco/collect": "^5.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xavier Dubois",
+            "email": "juyn89@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/Jn/helpers.php"
+        ],
+        "psr-4": {
+            "Jn\\": "src/Jn"
+        }
+    }
+}
