@@ -2,7 +2,7 @@
 
 namespace Jn;
 
-function coucou()
+function collect($value = null)
 {
-    die('ok');
+    return new Collection($value);
 }
