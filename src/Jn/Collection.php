@@ -89,7 +89,13 @@ class Collection extends SupportCollection
      */
     public function extract(string $field): Collection
     {
-        return $this->pluck($field);
+        return $this
+            ->withoutNull($field)
+            ->map(function ($element) use ($field) {
+                return $this->getAccessor()->getValue($element, $field);
+            })
+            ->flatten()
+            ->getSortedCollection();
     }
 
     /**
