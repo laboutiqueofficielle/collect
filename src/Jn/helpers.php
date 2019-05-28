@@ -4,7 +4,7 @@ namespace Jn;
 
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Tightenco\Collect\Support\Arr;
-use Tightenco\Collect\Support\Collection;
+use Jn\Collection;
 
 function collect($value = null)
 {
