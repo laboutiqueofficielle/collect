@@ -1,5 +1,5 @@
 {
-    "name": "juyn/collect",
+    "name": "lbo/collect",
     "description": "Implement an Extended version of Laravel Collection",
     "require": {
         "php": "^7.1.3",
