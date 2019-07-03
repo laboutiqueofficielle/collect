@@ -8,6 +8,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Tightenco\Collect\Support\Arr;
 use Tightenco\Collect\Support\Collection as SupportCollection;
+
 /**
  * Class Collection
  *
@@ -159,7 +160,7 @@ class Collection extends SupportCollection
      *
      * @param  string|array  $value
      * @param  string|null  $key
-     * @return \Tightenco\Collect\Support\Collection
+     * @return Collection
      */
     public function pluck($value, $key = null)
     {
@@ -273,7 +274,7 @@ class Collection extends SupportCollection
      *
      * @param  string  $key
      * @param  array  $values
-     * @return \Tightenco\Collect\Support\Collection
+     * @return Collection
      */
     public function whereNotBetween($key, $values)
     {
@@ -305,7 +306,7 @@ class Collection extends SupportCollection
      * @param  string  $key
      * @param  mixed  $values
      * @param  bool  $strict
-     * @return \Tightenco\Collect\Support\Collection
+     * @return Collection
      */
     public function whereIn($key, $values, $strict = false)
     {
