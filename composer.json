@@ -20,5 +20,6 @@
         "psr-4": {
             "Jn\\": "src/Jn"
         }
-    }
+    },
+    "abandoned": true
 }
