@@ -8,6 +8,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Tightenco\Collect\Support\Arr;
 use Tightenco\Collect\Support\Collection as SupportCollection;
+
 /**
  * Class Collection
  *
