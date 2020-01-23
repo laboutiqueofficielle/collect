@@ -1,3 +1,1 @@
-# collect
-
-Add support for Symfony on Laravel's awesome Collection
+# This package is abandoned
