@@ -13,9 +13,10 @@ function collect($value = null)
 /**
  * Get an item from an array or object using "dot" notation.
  *
- * @param  mixed   $target
+ * @param  mixed         $target
  * @param  string|array  $key
- * @param  mixed   $default
+ * @param  mixed         $default
+ *
  * @return mixed
  */
 function data_get($target, $key, $default = null)
@@ -42,7 +43,23 @@ function data_get($target, $key, $default = null)
         if (Arr::accessible($target) && Arr::exists($target, $segment)) {
             $target = $target[$segment];
         } elseif (is_object($target)) {
-            return PropertyAccess::createPropertyAccessorBuilder()->enableMagicCall()->getPropertyAccessor()->getValue($target, $segment);
+            $reflectedObject = new \ReflectionObject($target);
+
+            // Use Reflection class to check if property even exist, otherwhise let's use default value
+            if (!$reflectedObject->hasProperty($segment)) {
+                return value($default);
+            }
+
+            $p = $reflectedObject->getProperty($segment);
+
+            // If property is public, no need to get all the way down
+            if ($p->isPublic() && isset($target->{$segment})) {
+                $target = $target->{$segment};
+            } else {
+                // Make the property accessible before geting its value
+                $p->setAccessible(true);
+                $target = $p->getValue($target);
+            }
         } else {
             return value($default);
         }
