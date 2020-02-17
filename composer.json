@@ -21,5 +21,8 @@
             "Jn\\": "src/Jn"
         }
     },
+    "replace": {
+        "juyn/collect": "1.*"
+    },
     "abandoned": true
 }
